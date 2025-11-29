@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Ethan Jensen - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -74,6 +74,27 @@
             opacity: 0.9;
         }
 
+        .hero-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .hero-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
         /* Sections */
         section {
             padding: 4rem 0;
@@ -96,6 +117,45 @@
             margin: 0 auto;
             text-align: center;
             font-size: 1.1rem;
+        }
+
+        /* Highlighted Projects Section */
+        .highlights {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-card {
+            background: #fff;
+            border: 3px solid #007bff;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,123,255,0.2);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,123,255,0.3);
+        }
+
+        .highlight-card h3 {
+            color: #007bff;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .highlight-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
         }
 
         /* Projects Section */
@@ -216,6 +276,25 @@
             padding: 2rem 0;
         }
 
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -238,6 +317,7 @@
             <div class="container">
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#highlights">Highlights</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#resume">Resume</a></li>
                 </ul>
@@ -247,8 +327,12 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Your Name</h1>
-            <p>Software Developer | Problem Solver | Creative Thinker</p>
+            <h1>Ethan Jensen</h1>
+            <p>AI/ML Intern | Computer Science Undergrad</p>
+            <div class="hero-links">
+                <a href="mailto:1013jensen@gmail.com">1013jensen@gmail.com</a>
+                <a href="https://www.linkedin.com/in/ethan-jensen-891241252/" target="_blank">LinkedIn</a>
+            </div>
         </div>
     </section>
 
@@ -257,13 +341,39 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <p>
-                    Welcome to my portfolio! I'm a passionate developer with experience in building 
-                    innovative solutions. I love creating clean, efficient code and solving complex problems.
+                    Welcome to my portfolio! I'm Ethan Jensen, an AI/ML Intern at SoundSafe.ai and a Computer Science 
+                    undergraduate at Southern New Hampshire University (January 2024 - June 2027). I'm passionate about 
+                    developing cutting-edge AI solutions, particularly in watermarking and deepfake detection technologies.
                 </p>
                 <p style="margin-top: 1rem;">
-                    Feel free to explore my projects below and check out my work experience. 
-                    If you'd like to connect, don't hesitate to reach out!
+                    My top skills include Java, Python, and interpersonal communication. I love solving complex problems 
+                    and creating innovative solutions with AI and machine learning. Feel free to explore my projects below 
+                    and check out my work experience!
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="highlights" class="highlights">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="highlights-grid">
+                <!-- Highlighted Project Card Template - Copy and modify for each featured project -->
+                <div class="highlight-card">
+                    <h3>Featured Project 1</h3>
+                    <p>Detailed description of your standout project. This section is perfect for showcasing your best work with more space to explain what makes it special.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/ethanjensn/repo1" class="btn" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <h3>Featured Project 2</h3>
+                    <p>Another impressive project that demonstrates your skills. Highlight the technologies used and key achievements here.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/ethanjensn/repo2" class="btn" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -278,7 +388,6 @@
                     <p>Brief description of your project and what technologies you used.</p>
                     <div class="project-links">
                         <a href="https://github.com/yourusername/repo1" class="btn" target="_blank">GitHub Repo</a>
-                        <a href="https://yourproject-demo.com" class="btn btn-secondary" target="_blank">Live Demo</a>
                     </div>
                 </div>
 
@@ -287,7 +396,6 @@
                     <p>Brief description of your project and what technologies you used.</p>
                     <div class="project-links">
                         <a href="https://github.com/yourusername/repo2" class="btn" target="_blank">GitHub Repo</a>
-                        <a href="https://yourproject-demo.com" class="btn btn-secondary" target="_blank">Live Demo</a>
                     </div>
                 </div>
 
@@ -306,27 +414,71 @@
         <div class="container">
             <h2>Work Experience</h2>
             <div class="resume-content">
-                <!-- Resume Item Template - Copy and modify for each job -->
                 <div class="resume-item">
-                    <h3>Job Title</h3>
-                    <div class="company">Company Name</div>
-                    <div class="date">Start Date - End Date</div>
+                    <h3>AI/ML Intern</h3>
+                    <div class="company">SoundSafe.ai</div>
+                    <div class="date">June 2025 - Present (6 months) | Galena, Illinois, United States</div>
                     <ul>
-                        <li>Key achievement or responsibility</li>
-                        <li>Another important accomplishment</li>
-                        <li>Technical skill or project you worked on</li>
+                        <li>Help develop cutting-edge watermarking methods that are hard to detect but strong enough to protect audio, video, and sensor data from misuse or tampering</li>
+                        <li>Explore new ways to apply watermarking to data coming from sensors</li>
+                        <li>Work on building real-time detection systems that can quickly and accurately spot AI-generated speech, deepfake videos, and unusual patterns in sensor data</li>
+                        <li>Be part of the team rolling out AI-powered tools for watermarking and deepfake detection across different types of media</li>
+                        <li>Collaborate with engineers to bring these solutions into the company's platforms smoothly and effectively</li>
                     </ul>
                 </div>
 
                 <div class="resume-item">
-                    <h3>Previous Job Title</h3>
-                    <div class="company">Previous Company</div>
-                    <div class="date">Start Date - End Date</div>
+                    <h3>Commission Sales Associate</h3>
+                    <div class="company">Slumberland Furniture</div>
+                    <div class="date">December 2022 - September 2025 (2 years 10 months) | Dubuque, Iowa, United States</div>
                     <ul>
-                        <li>Key achievement or responsibility</li>
-                        <li>Another important accomplishment</li>
-                        <li>Technical skill or project you worked on</li>
+                        <li>Prioritize building trust and cultivating strong relationships with customers</li>
+                        <li>Ensure each customer leaves with an exceptional experience and a unique connection</li>
+                        <li>Tailor each interaction to create a personal connection with every individual</li>
+                        <li>Keep tabs on customers' orders and watch orders daily</li>
+                        <li>Keep updated with new products and system changes, and maintain stock knowledge</li>
+                        <li>Utilize body language reading and relationship-building skills to meet sales quotas</li>
                     </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Repair Technician</h3>
+                    <div class="company">CPR Cell Phone Repair</div>
+                    <div class="date">July 2021 - December 2022 (1 year 6 months) | Iowa, United States</div>
+                    <ul>
+                        <li>Sold refurbished phones, cases, protectors, and various accessories</li>
+                        <li>Repaired and refurbished iPhones and Samsung devices in-house</li>
+                        <li>Assisted customers with phone and tech-related issues, including screen replacements and device setup</li>
+                        <li>Managed closing the till, purchase orders, and inventory</li>
+                        <li>Fixed devices in a timely manner with excellent time management</li>
+                        <li>Received a 70% increase in wage within a year</li>
+                        <li>Handled money and troubleshooting</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Warehouse Associate</h3>
+                    <div class="company">Slumberland Furniture</div>
+                    <div class="date">October 2020 - July 2021 (10 months) | Iowa, United States</div>
+                    <ul>
+                        <li>Assisted customers with loading furniture into their vehicles and unloading furniture from semis in a timely and careful manner</li>
+                        <li>Supported customers and sales staff by rearranging furniture in the showroom to help visualize color and style combinations</li>
+                        <li>Supervised coworkers to ensure they performed their duties correctly</li>
+                        <li>Made sure showroom was presentable and assembled furniture with care</li>
+                        <li>Took orders and packed items for customer deliveries</li>
+                        <li>Processed delivery reports and inventory, manually inspected items</li>
+                        <li>Familiar with power tools and organized materials</li>
+                        <li>Received 3 raises in 8 months</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 3rem;">Education</h2>
+            <div class="resume-content">
+                <div class="resume-item">
+                    <h3>Bachelor's Degree, Computer Science</h3>
+                    <div class="company">Southern New Hampshire University</div>
+                    <div class="date">January 2024 - June 2027</div>
                 </div>
             </div>
         </div>
@@ -334,7 +486,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Ethan Jensen. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="mailto:1013jensen@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/ethan-jensen-891241252/" target="_blank">LinkedIn</a>
+            </div>
         </div>
     </footer>
 
