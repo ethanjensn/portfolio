@@ -158,6 +158,21 @@
             font-size: 1.05rem;
         }
 
+        .highlight-media {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-media img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 123, 255, 0.35);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+        }
+
         /* Projects Section */
         .projects {
             background: #fff;
@@ -343,7 +358,7 @@
                 <p>
                     Welcome to my portfolio! I'm Ethan Jensen, an AI/ML Intern at SoundSafe.ai and a Computer Science 
                     undergraduate at Southern New Hampshire University (January 2024 - June 2027). I'm passionate about 
-                    developing cutting-edge AI solutions, particularly in watermarking and deepfake detection technologies.
+                    developing cutting-edge AI solutions, particularly in YOLO and computer vision.
                 </p>
                 <p style="margin-top: 1rem;">
                     My top skills include Java, Python, and interpersonal communication. I love solving complex problems 
@@ -362,6 +377,10 @@
                 <div class="highlight-card">
                     <h3>IsaacLab Leatherback Obstacle Avoidance</h3>
                     <p>Robotics project implementing obstacle avoidance using Isaac Lab. This project demonstrates advanced AI/ML techniques for autonomous navigation and real-time decision making.</p>
+                    <div class="highlight-media">
+                        <img src="Isaac/gif-3-fast-isaac.gif" alt="IsaacLab obstacle avoidance LiDAR path planning demo" loading="lazy">
+                        <img src="Isaac/gif-4-fast-isaac.gif" alt="IsaacLab autonomous navigation simulation" loading="lazy">
+                    </div>
                     <div class="project-links">
                         <a href="https://github.com/ethanjensn/IsaacLab-Leatherback-Obstacle-Avoidance.git" class="btn" target="_blank">GitHub Repo</a>
                     </div>
@@ -380,6 +399,18 @@
                     <p>Computer vision project for automatic license plate recognition using image processing and OCR techniques. Demonstrates practical applications of AI in traffic and security systems.</p>
                     <div class="project-links">
                         <a href="https://github.com/ethanjensn/License-Plate-Recognition.git" class="btn" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <h3>Realtime Alphanum CNN OCR</h3>
+                    <p>Lightweight convolutional neural network for real-time alphanumeric character recognition from camera streams, featuring dual models (characters + numbers) that can be hot-swapped while the program runs. Built with PyTorch, ONNX, and OpenCV to deploy OCR on edge devices.</p>
+                    <div class="highlight-media">
+                        <img src="CNN-OCR/char-and-num-demo-high-qual-1.25x-CNN.gif" alt="Realtime alphanumeric OCR multi-character demo" loading="lazy">
+                        <img src="CNN-OCR/char-demo-gif-1x-high-quality-CNN.gif" alt="Realtime OCR character tracking preview" loading="lazy">
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ethanjensn/realtime-alphanum-cnn-ocr.git" class="btn" target="_blank">GitHub Repo</a>
                     </div>
                 </div>
             </div>
@@ -423,15 +454,27 @@
             <h2>Work Experience</h2>
             <div class="resume-content">
                 <div class="resume-item">
+                    <h3>AI Software Engineer</h3>
+                    <div class="company">SoundSafe.ai</div>
+                    <div class="date">December 2025 - Present | Hybrid</div>
+                    <ul>
+                        <li>Architected video ingestion pipelines by migrating from NVIDIA DeepStream to a custom FFmpeg-based service, improving flexibility and stream reliability.</li>
+                        <li>Integrated YOLO-based computer vision models into the production dashboard for high-accuracy, multi-stream violence detection.</li>
+                        <li>Built a responsive React frontend that visualizes real-time detections alongside system performance metrics.</li>
+                        <li>Reduced latency across multi-stream environments through NVIDIA hardware acceleration and GStreamer optimizations.</li>
+                        <li>Managed deployments, Git workflows, and Dockerized services to streamline collaborative troubleshooting of AI/ML codebases.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
                     <h3>AI/ML Intern</h3>
                     <div class="company">SoundSafe.ai</div>
-                    <div class="date">June 2025 - Present (6 months) | Galena, Illinois, United States</div>
+                    <div class="date">June 2025 - December 2025 (7 months) | On-site</div>
                     <ul>
-                        <li>Help develop cutting-edge watermarking methods that are hard to detect but strong enough to protect audio, video, and sensor data from misuse or tampering</li>
-                        <li>Explore new ways to apply watermarking to data coming from sensors</li>
-                        <li>Work on building real-time detection systems that can quickly and accurately spot AI-generated speech, deepfake videos, and unusual patterns in sensor data</li>
-                        <li>Be part of the team rolling out AI-powered tools for watermarking and deepfake detection across different types of media</li>
-                        <li>Collaborate with engineers to bring these solutions into the company's platforms smoothly and effectively</li>
+                        <li>Developed and trained a reinforcement learning agent in NVIDIA Isaac Lab for real-time LiDAR-based obstacle avoidance.</li>
+                        <li>Improved simulation efficiency and reward accuracy by implementing Direct Tensor Access for collision feedback.</li>
+                        <li>Engineered a custom alpha-numeric CNN OCR system using EMNIST datasets to enable high-accuracy live video recognition.</li>
+                        <li>Collaborated on deploying AI-powered watermarking and deepfake detection tooling across company platforms.</li>
                     </ul>
                 </div>
 
