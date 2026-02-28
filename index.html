@@ -173,6 +173,63 @@
             object-fit: cover;
         }
 
+        .nsfw-wrapper {
+            position: relative;
+            border: 2px dashed rgba(220, 53, 69, 0.5);
+            border-radius: 12px;
+            padding: 1.25rem;
+            background: rgba(255, 228, 230, 0.4);
+        }
+
+        .nsfw-cover {
+            cursor: pointer;
+            text-align: center;
+            color: #b02a37;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            align-items: center;
+        }
+
+        .nsfw-badge {
+            background: #dc3545;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .nsfw-cover small {
+            font-weight: 400;
+            color: #8a1d29;
+        }
+
+        .nsfw-content {
+            display: none;
+        }
+
+        .nsfw-wrapper.active {
+            border-style: solid;
+            background: rgba(255, 240, 241, 0.65);
+        }
+
+        .nsfw-wrapper.active .nsfw-cover {
+            display: none;
+        }
+
+        .nsfw-wrapper.active .nsfw-content {
+            display: block;
+        }
+
+        .video-grid video {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid rgba(176, 42, 55, 0.3);
+            box-shadow: 0 6px 15px rgba(176, 42, 55, 0.2);
+        }
+
         /* Projects Section */
         .projects {
             background: #fff;
@@ -389,6 +446,20 @@
                 <div class="highlight-card">
                     <h3>Violence Detection</h3>
                     <p>AI-powered violence detection system using machine learning and computer vision techniques. This project demonstrates real-time analysis and detection capabilities for safety applications.</p>
+                    <div class="nsfw-wrapper" aria-live="polite">
+                        <div class="nsfw-cover" tabindex="0" role="button" aria-label="Reveal NSFW violence detection demo videos">
+                            <span class="nsfw-badge">NSFW</span>
+                            <p>Viewer discretion advised. Click to reveal demo footage.</p>
+                            <small>Violence detection test clips (safe for work until opened).</small>
+                        </div>
+                        <div class="nsfw-content" aria-hidden="true">
+                            <div class="highlight-media video-grid">
+                                <video src="Violence-Detection/fightone_edited.mp4" controls muted loop preload="metadata"></video>
+                                <video src="Violence-Detection/Bike_Edited.mp4" controls muted loop preload="metadata"></video>
+                                <video src="Violence-Detection/Non_Violence.mp4" controls muted loop preload="metadata"></video>
+                            </div>
+                        </div>
+                    </div>
                     <div class="project-links">
                         <a href="https://github.com/ethanjensn/ViolenceDetection.git" class="btn" target="_blank">GitHub Repo</a>
                     </div>
@@ -556,6 +627,25 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+            });
+        });
+
+        // NSFW reveal toggles
+        document.querySelectorAll('.nsfw-cover').forEach(cover => {
+            const wrapper = cover.closest('.nsfw-wrapper');
+            const reveal = () => {
+                wrapper.classList.add('active');
+                const content = wrapper.querySelector('.nsfw-content');
+                if (content) {
+                    content.setAttribute('aria-hidden', 'false');
+                }
+            };
+            cover.addEventListener('click', reveal);
+            cover.addEventListener('keypress', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    reveal();
                 }
             });
         });
