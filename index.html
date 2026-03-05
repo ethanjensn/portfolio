@@ -173,12 +173,23 @@
             object-fit: cover;
         }
 
+        .lpr-media-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .lpr-media-grid img {
+            grid-column: span 2;
+        }
+
         .nsfw-wrapper {
             position: relative;
             border: 2px dashed rgba(220, 53, 69, 0.5);
             border-radius: 12px;
             padding: 1.25rem;
             background: rgba(255, 228, 230, 0.4);
+            margin-bottom: 1.5rem;
         }
 
         .nsfw-cover {
@@ -228,6 +239,48 @@
             border-radius: 10px;
             border: 2px solid rgba(176, 42, 55, 0.3);
             box-shadow: 0 6px 15px rgba(176, 42, 55, 0.2);
+        }
+
+        /* Skills Section */
+        .skills {
+            background: #f8f9fb;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.75rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #e0e6ed;
+            padding: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.08);
+        }
+
+        .skill-card h3 {
+            color: #007bff;
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-chip {
+            background: rgba(0, 123, 255, 0.08);
+            color: #0056b3;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(0, 123, 255, 0.2);
         }
 
         /* Projects Section */
@@ -388,10 +441,12 @@
         <nav>
             <div class="container">
                 <ul>
-                    <li><a href="#about">About</a></li>
                     <li><a href="#highlights">Highlights</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#resume">Resume</a></li>
+                    <li><a href="#about">About</a></li>
                 </ul>
             </div>
         </nav>
@@ -400,28 +455,11 @@
     <section class="hero">
         <div class="container">
             <h1>Ethan Jensen</h1>
-            <p>AI/ML Intern | Computer Science Undergrad</p>
+            <p>AI/ML Engineer | Computer Vision & Reinforcement Learning</p>
             <div class="hero-links">
                 <a href="mailto:1013jensen@gmail.com">1013jensen@gmail.com</a>
                 <a href="https://www.linkedin.com/in/ethan-jensen-891241252/" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>
-                    Welcome to my portfolio! I'm Ethan Jensen, an AI/ML Intern at SoundSafe.ai and a Computer Science 
-                    undergraduate at Southern New Hampshire University (January 2024 - June 2027). I'm passionate about 
-                    developing cutting-edge AI solutions, particularly in YOLO and computer vision.
-                </p>
-                <p style="margin-top: 1rem;">
-                    My top skills include Java, Python, and interpersonal communication. I love solving complex problems 
-                    and creating innovative solutions with AI and machine learning. Feel free to explore my projects below 
-                    and check out my work experience!
-                </p>
+                <a href="https://github.com/ethanjensn" target="_blank">GitHub</a>
             </div>
         </div>
     </section>
@@ -432,8 +470,9 @@
             <div class="highlights-grid">
                 <!-- Highlighted Project Card Template - Copy and modify for each featured project -->
                 <div class="highlight-card">
-                    <h3>IsaacLab Leatherback Obstacle Avoidance</h3>
-                    <p>Robotics project implementing obstacle avoidance using Isaac Lab. This project demonstrates advanced AI/ML techniques for autonomous navigation and real-time decision making.</p>
+                    <h3>Autonomous Navigation with Reinforcement Learning in NVIDIA Isaac Lab</h3>
+                    <p>Built a reinforcement learning simulation environment where a four-wheel vehicle learns to autonomously navigate through a series of waypoints while avoiding obstacles. The system uses LiDAR-based ray casting to detect nearby objects and feed environmental data into the RL policy.</p>
+                    <p>The vehicle is trained using Proximal Policy Optimization (PPO) with the RSL-RL framework, enabling it to learn collision avoidance and path navigation within a physics-based simulation powered by NVIDIA Isaac Lab.</p>
                     <div class="highlight-media">
                         <img src="Isaac/gif-3-fast-isaac.gif" alt="IsaacLab obstacle avoidance LiDAR path planning demo" loading="lazy">
                         <img src="Isaac/gif-4-fast-isaac.gif" alt="IsaacLab autonomous navigation simulation" loading="lazy">
@@ -445,7 +484,8 @@
 
                 <div class="highlight-card">
                     <h3>Violence Detection</h3>
-                    <p>AI-powered violence detection system using machine learning and computer vision techniques. This project demonstrates real-time analysis and detection capabilities for safety applications.</p>
+                    <p>Built a real-time violence detection system that analyzes video footage using computer vision and deep learning. The pipeline uses YOLO pose estimation to extract human body keypoints and combines pose features with image data in a custom CNN + Transformer model to classify violent versus non-violent actions.</p>
+                    <p>The system includes tools for dataset auditing, preprocessing, video slicing, and model training, along with an inference client that processes video streams and applies configurable detection thresholds.</p>
                     <div class="nsfw-wrapper" aria-live="polite">
                         <div class="nsfw-cover" tabindex="0" role="button" aria-label="Reveal NSFW violence detection demo videos">
                             <span class="nsfw-badge">NSFW</span>
@@ -466,16 +506,25 @@
                 </div>
 
                 <div class="highlight-card">
-                    <h3>License Plate Recognition</h3>
-                    <p>Computer vision project for automatic license plate recognition using image processing and OCR techniques. Demonstrates practical applications of AI in traffic and security systems.</p>
+                    <h3>Automatic License Plate Recognition System</h3>
+                    <p>Built an end-to-end computer vision system that detects and reads vehicle license plates from video. The pipeline uses YOLO for license plate detection, crops detected regions, and applies OCR models such as EasyOCR/PaddleOCR to recognize plate characters.</p>
+                    <p>The system supports processing video streams and storing cropped plate images for separate OCR processing, allowing the detection and recognition stages to run independently for better scalability.</p>
+                    <div class="highlight-media lpr-media-grid video-grid">
+                        <img src="LPR-OCR/pic_lpr_1.png" alt="License plate recognition inference overlay" loading="lazy">
+                        <video src="LPR-OCR/LPR2.mp4" controls muted loop preload="metadata"></video>
+                        <video src="LPR-OCR/LPR6.mp4" controls muted loop preload="metadata"></video>
+                        <video src="LPR-OCR/realtime_video_lpr_1.mp4" controls muted loop preload="metadata"></video>
+                        <video src="LPR-OCR/realtime_video_lpr_2.mp4" controls muted loop preload="metadata"></video>
+                    </div>
                     <div class="project-links">
                         <a href="https://github.com/ethanjensn/License-Plate-Recognition.git" class="btn" target="_blank">GitHub Repo</a>
                     </div>
                 </div>
 
                 <div class="highlight-card">
-                    <h3>Realtime Alphanum CNN OCR</h3>
-                    <p>Lightweight convolutional neural network for real-time alphanumeric character recognition from camera streams, featuring dual models (characters + numbers) that can be hot-swapped while the program runs. Built with PyTorch, ONNX, and OpenCV to deploy OCR on edge devices.</p>
+                    <h3>Real-Time Alphanumeric OCR with CNN</h3>
+                    <p>Lightweight convolutional neural network for real-time alphanumeric character recognition from camera streams, featuring dual models (characters + numbers) that can be hot-swapped while the program runs. </p>
+                    <p>Built a deep learning OCR system designed to recognize alphanumeric characters from image inputs in real time. The project uses a Convolutional Neural Network (CNN) trained on labeled character datasets to classify letters and digits with high accuracy.</p>
                     <div class="highlight-media">
                         <img src="CNN-OCR/char-and-num-demo-high-qual-1.25x-CNN.gif" alt="Realtime alphanumeric OCR multi-character demo" loading="lazy">
                         <img src="CNN-OCR/char-demo-gif-1x-high-quality-CNN.gif" alt="Realtime OCR character tracking preview" loading="lazy">
@@ -484,6 +533,217 @@
                         <a href="https://github.com/ethanjensn/realtime-alphanum-cnn-ocr.git" class="btn" target="_blank">GitHub Repo</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li class="skill-chip">Python</li>
+                        <li class="skill-chip">Java</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Machine Learning &amp; AI</h3>
+                    <ul>
+                        <li class="skill-chip">Deep Learning</li>
+                        <li class="skill-chip">CNNs</li>
+                        <li class="skill-chip">Transformer Models</li>
+                        <li class="skill-chip">Reinforcement Learning</li>
+                        <li class="skill-chip">PPO (Proximal Policy Optimization)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Computer Vision Techniques</h3>
+                    <ul>
+                        <li class="skill-chip">OpenCV</li>
+                        <li class="skill-chip">Object Detection (YOLO)</li>
+                        <li class="skill-chip">Pose Estimation</li>
+                        <li class="skill-chip">Optical Character Recognition</li>
+                        <li class="skill-chip">Video Processing</li>
+                        <li class="skill-chip">Image Preprocessing</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>ML Frameworks &amp; Tools</h3>
+                    <ul>
+                        <li class="skill-chip">PyTorch</li>
+                        <li class="skill-chip">EasyOCR / PaddleOCR</li>
+                        <li class="skill-chip">NVIDIA Isaac Lab</li>
+                        <li class="skill-chip">RSL-RL</li>
+                        <li class="skill-chip">NVIDIA CUDA</li>
+                        <li class="skill-chip">FFmpeg</li>
+                        <li class="skill-chip">GStreamer</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Software Engineering</h3>
+                    <ul>
+                        <li class="skill-chip">Git</li>
+                        <li class="skill-chip">Docker</li>
+                        <li class="skill-chip">Model Deployment</li>
+                        <li class="skill-chip">REST APIs</li>
+                        <li class="skill-chip">System Architecture</li>
+                        <li class="skill-chip">Debugging &amp; Performance Optimization</li>
+                        <li class="skill-chip">Linux Development</li>
+                        <li class="skill-chip">CI/CD</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Real-Time AI Systems</h3>
+                    <ul>
+                        <li class="skill-chip">Real-Time Inference</li>
+                        <li class="skill-chip">Streaming Video Processing</li>
+                        <li class="skill-chip">Inference Optimization</li>
+                        <li class="skill-chip">GPU Acceleration</li>
+                        <li class="skill-chip">Low-Latency Detection Pipelines</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Robotics &amp; Simulation</h3>
+                    <ul>
+                        <li class="skill-chip">Reinforcement Learning Environments</li>
+                        <li class="skill-chip">LiDAR Simulation</li>
+                        <li class="skill-chip">Robotics Simulation</li>
+                        <li class="skill-chip">Autonomous Navigation</li>
+                        <li class="skill-chip">Sensor Modeling</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Data &amp; Processing</h3>
+                    <ul>
+                        <li class="skill-chip">Data Pipelines</li>
+                        <li class="skill-chip">Dataset Curation</li>
+                        <li class="skill-chip">Video Frame Processing</li>
+                        <li class="skill-chip">Data Augmentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="resume"></div>
+    <section id="experience" class="resume">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="resume-content">
+                <div class="resume-item">
+                    <h3>Founding Developer</h3>
+                    <div class="company">SoundSafe.ai</div>
+                    <div class="date">March 2026 - Present | Galena, IL</div>
+                    <ul>
+                        <li>Drive the technical roadmap and R&D strategy for SoundSafe.ai's flagship violence-detection platform.</li>
+                        <li>Oversee full-stack development of proprietary AI algorithms and system architecture to align with product goals.</li>
+                        <li>Coordinate cross-functional efforts to translate research breakthroughs into reliable production deployments.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>AI Software Engineer</h3>
+                    <div class="company">SoundSafe.ai</div>
+                    <div class="date">December 2025 - March 2026 (4 months) | Galena, IL</div>
+                    <ul>
+                        <li>Architected video ingestion pipelines by migrating from NVIDIA DeepStream to a custom FFmpeg-based service, improving flexibility and stream reliability.</li>
+                        <li>Integrated YOLO-based computer vision models into the production dashboard for high-accuracy, multi-stream violence detection.</li>
+                        <li>Built a responsive React frontend that visualizes real-time detections alongside system performance metrics.</li>
+                        <li>Reduced latency across multi-stream environments through NVIDIA hardware acceleration and GStreamer optimizations.</li>
+                        <li>Managed deployments, Git workflows, and Dockerized services to streamline collaborative troubleshooting of AI/ML codebases.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>AI/ML Intern</h3>
+                    <div class="company">SoundSafe.ai</div>
+                    <div class="date">June 2025 - December 2025 (7 months) | On-site</div>
+                    <ul>
+                        <li>Developed and trained a reinforcement learning agent in NVIDIA Isaac Lab for real-time LiDAR-based obstacle avoidance.</li>
+                        <li>Improved simulation efficiency and reward accuracy by implementing Direct Tensor Access for collision feedback.</li>
+                        <li>Engineered a custom alpha-numeric CNN OCR system using EMNIST datasets to enable high-accuracy live video recognition.</li>
+                        <li>Collaborated on deploying AI-powered watermarking and deepfake detection tooling across company platforms.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Commission Sales Associate</h3>
+                    <div class="company">Slumberland Furniture</div>
+                    <div class="date">December 2022 - September 2025 (2 years 10 months) | Dubuque, Iowa, United States</div>
+                    <ul>
+                        <li>Prioritize building trust and cultivating strong relationships with customers</li>
+                        <li>Ensure each customer leaves with an exceptional experience and a unique connection</li>
+                        <li>Tailor each interaction to create a personal connection with every individual</li>
+                        <li>Keep tabs on customers' orders and watch orders daily</li>
+                        <li>Keep updated with new products and system changes, and maintain stock knowledge</li>
+                        <li>Utilize body language reading and relationship-building skills to meet sales quotas</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Repair Technician</h3>
+                    <div class="company">CPR Cell Phone Repair</div>
+                    <div class="date">July 2021 - December 2022 (1 year 6 months) | Iowa, United States</div>
+                    <ul>
+                        <li>Sold refurbished phones, cases, protectors, and various accessories</li>
+                        <li>Repaired and refurbished iPhones and Samsung devices in-house</li>
+                        <li>Assisted customers with phone and tech-related issues, including screen replacements and device setup</li>
+                        <li>Managed closing the till, purchase orders, and inventory</li>
+                        <li>Fixed devices in a timely manner with excellent time management</li>
+                        <li>Received a 70% increase in wage within a year</li>
+                        <li>Handled money and troubleshooting</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <h3>Warehouse Associate</h3>
+                    <div class="company">Slumberland Furniture</div>
+                    <div class="date">October 2020 - July 2021 (10 months) | Iowa, United States</div>
+                    <ul>
+                        <li>Assisted customers with loading furniture into their vehicles and unloading furniture from semis in a timely and careful manner</li>
+                        <li>Supported customers and sales staff by rearranging furniture in the showroom to help visualize color and style combinations</li>
+                        <li>Supervised coworkers to ensure they performed their duties correctly</li>
+                        <li>Made sure showroom was presentable and assembled furniture with care</li>
+                        <li>Took orders and packed items for customer deliveries</li>
+                        <li>Processed delivery reports and inventory, manually inspected items</li>
+                        <li>Familiar with power tools and organized materials</li>
+                        <li>Received 3 raises in 8 months</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 3rem;">Education</h2>
+            <div class="resume-content">
+                <div class="resume-item">
+                    <h3>Bachelor's Degree, Computer Science</h3>
+                    <div class="company">Southern New Hampshire University</div>
+                    <div class="date">January 2024 - June 2027</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    I’m a Computer Science student at Southern New Hampshire University and an AI/ML developer focused on computer vision and reinforcement learning systems. My work includes real-time detection pipelines, OCR systems, and robotics simulation using NVIDIA Isaac Lab.
+                </p>
+                <p style="margin-top: 1rem;">
+                    My top skills include Java, Python, and interpersonal communication. I love solving complex problems 
+                    and creating innovative solutions with AI and machine learning. Feel free to explore my projects below 
+                    and check out my work experience!
+                </p>
             </div>
         </div>
     </section>
@@ -525,9 +785,20 @@
             <h2>Work Experience</h2>
             <div class="resume-content">
                 <div class="resume-item">
+                    <h3>Founding Developer</h3>
+                    <div class="company">SoundSafe.ai</div>
+                    <div class="date">March 2026 - Present | Galena, IL</div>
+                    <ul>
+                        <li>Drive the technical roadmap and R&D strategy for SoundSafe.ai's flagship violence-detection platform.</li>
+                        <li>Oversee full-stack development of proprietary AI algorithms and system architecture to align with product goals.</li>
+                        <li>Coordinate cross-functional efforts to translate research breakthroughs into reliable production deployments.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
                     <h3>AI Software Engineer</h3>
                     <div class="company">SoundSafe.ai</div>
-                    <div class="date">December 2025 - Present | Hybrid</div>
+                    <div class="date">December 2025 - March 2026 (4 months) | Galena, IL</div>
                     <ul>
                         <li>Architected video ingestion pipelines by migrating from NVIDIA DeepStream to a custom FFmpeg-based service, improving flexibility and stream reliability.</li>
                         <li>Integrated YOLO-based computer vision models into the production dashboard for high-accuracy, multi-stream violence detection.</li>
