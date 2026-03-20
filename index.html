@@ -183,6 +183,21 @@
             grid-column: span 2;
         }
 
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .image-grid img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 123, 255, 0.35);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+        }
+
         .nsfw-wrapper {
             position: relative;
             border: 2px dashed rgba(220, 53, 69, 0.5);
@@ -531,6 +546,24 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/ethanjensn/realtime-alphanum-cnn-ocr.git" class="btn" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <h3>Full-Stack RSVP Management Platform</h3>
+                    <p>Launched a production-ready RSVP workflow where guests can respond to wedding and event invitations, track party details, and leave personal notes. The frontend is hosted on Render with server-side logic that validates submissions and delivers crisp mobile-first experiences.</p>
+                    <p>The backend uses a Neon Postgres database for persistent storage, Prisma data models, and secure API routes for creating, viewing, and updating RSVP entries. Admin controls surface live attendee stats in a single dashboard.</p>
+                    <div class="highlight-media">
+                        <img src="rsvp-website/rsvp-1.png" alt="RSVP landing page with hero imagery" loading="lazy">
+                        <div class="image-grid">
+                            <img src="rsvp-website/rsvp-2.png" alt="Guest RSVP form flow" loading="lazy">
+                            <img src="rsvp-website/rsvp-3.png" alt="Confirmation view detailing guest responses" loading="lazy">
+                            <img src="rsvp-website/rsvp-4.png" alt="Admin dashboard metrics" loading="lazy">
+                            <img src="rsvp-website/rsvp-5.png" alt="Mobile-friendly RSVP interface" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ethanjensn/full-stack-rsvp-website.git" class="btn" target="_blank">GitHub Repo</a>
                     </div>
                 </div>
             </div>
