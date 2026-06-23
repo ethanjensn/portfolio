@@ -15,8 +15,10 @@ A clean, modern portfolio website showcasing projects and work experience.
 
 1. **Create a GitHub repository** named `yourusername.github.io` (replace `yourusername` with your GitHub username)
 
-2. **Upload this file** to your repository:
+2. **Upload these files** to your repository:
    - `index.html` (this is the main file)
+   - `styles.css` (site styles)
+   - `script.js` (navigation and NSFW toggle logic)
 
 3. **Enable GitHub Pages**:
    - Go to your repository settings
@@ -44,7 +46,7 @@ Edit `index.html` and update:
    - Update dates, companies, and responsibilities
 
 4. **Styling** (optional):
-   - Modify colors in the `<style>` section
+   - Modify colors in `styles.css`
    - Adjust spacing, fonts, or layout as desired
 
 ## License
