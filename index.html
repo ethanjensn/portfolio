@@ -51,8 +51,8 @@
                 <!-- Highlighted Project Card Template - Copy and modify for each featured project -->
                 <div class="highlight-card">
                     <h3>Autonomous Navigation with Reinforcement Learning in NVIDIA Isaac Lab</h3>
-                    <p>Built a reinforcement learning simulation environment where a four-wheel vehicle learns to autonomously navigate through a series of waypoints while avoiding obstacles. The system uses LiDAR-based ray casting to detect nearby objects and feed environmental data into the RL policy.</p>
-                    <p>The vehicle is trained using Proximal Policy Optimization (PPO) with the RSL-RL framework, enabling it to learn collision avoidance and path navigation within a physics-based simulation powered by NVIDIA Isaac Lab.</p>
+                    <p>Built a reinforcement learning simulation in NVIDIA Isaac Lab where a four-wheel vehicle uses LiDAR-based ray casting to navigate waypoints and avoid obstacles.</p>
+                    <p>Trained with PPO via the RSL-RL framework to learn collision avoidance and path navigation in a physics-based simulation.</p>
                     <div class="highlight-media">
                         <img src="Isaac/gif-3-fast-isaac.gif" alt="IsaacLab obstacle avoidance LiDAR path planning demo" loading="lazy">
                         <img src="Isaac/gif-4-fast-isaac.gif" alt="IsaacLab autonomous navigation simulation" loading="lazy">
@@ -64,8 +64,8 @@
 
                 <div class="highlight-card">
                     <h3>Violence Detection</h3>
-                    <p>Built a real-time violence detection system that analyzes video footage using computer vision and deep learning. The pipeline uses YOLO pose estimation to extract human body keypoints and combines pose features with image data in a custom CNN + Transformer model to classify violent versus non-violent actions.</p>
-                    <p>The system includes tools for dataset auditing, preprocessing, video slicing, and model training, along with an inference client that processes video streams and applies configurable detection thresholds.</p>
+                    <p>Real-time violence detection system that classifies violent vs. non-violent actions using YOLO pose estimation and a custom CNN/Transformer model.</p>
+                    <p>Includes dataset auditing, video preprocessing, model training, and a multi-stream inference client with configurable detection thresholds.</p>
                     <div class="nsfw-wrapper" aria-live="polite">
                         <div class="nsfw-cover" tabindex="0" role="button" aria-label="Reveal NSFW violence detection demo videos">
                             <span class="nsfw-badge">NSFW</span>
@@ -87,8 +87,8 @@
 
                 <div class="highlight-card">
                     <h3>Automatic License Plate Recognition System</h3>
-                    <p>Built an end-to-end computer vision system that detects and reads vehicle license plates from video. The pipeline uses YOLO for license plate detection, crops detected regions, and applies OCR models such as EasyOCR/PaddleOCR to recognize plate characters.</p>
-                    <p>The system supports processing video streams and storing cropped plate images for separate OCR processing, allowing the detection and recognition stages to run independently for better scalability.</p>
+                    <p>End-to-end system that detects license plates in video with YOLO, crops them, and runs OCR with EasyOCR/PaddleOCR.</p>
+                    <p>Separates detection and recognition into independent stages so each can be scaled or optimized separately.</p>
                     <div class="highlight-media lpr-media-grid video-grid">
                         <img src="LPR-OCR/pic_lpr_1.png" alt="License plate recognition inference overlay" loading="lazy">
                         <video src="LPR-OCR/LPR2.mp4" controls muted loop preload="metadata"></video>
@@ -103,8 +103,8 @@
 
                 <div class="highlight-card">
                     <h3>Real-Time Alphanumeric OCR with CNN</h3>
-                    <p>Lightweight convolutional neural network for real-time alphanumeric character recognition from camera streams, featuring dual models (characters + numbers) that can be hot-swapped while the program runs. </p>
-                    <p>Built a deep learning OCR system designed to recognize alphanumeric characters from image inputs in real time. The project uses a Convolutional Neural Network (CNN) trained on labeled character datasets to classify letters and digits with high accuracy.</p>
+                    <p>Lightweight CNN for real-time alphanumeric character recognition from camera streams.</p>
+                    <p>Uses dual models for letters and digits that can be hot-swapped while the program is running.</p>
                     <div class="highlight-media">
                         <img src="CNN-OCR/char-and-num-demo-high-qual-1.25x-CNN.gif" alt="Realtime alphanumeric OCR multi-character demo" loading="lazy">
                         <img src="CNN-OCR/char-demo-gif-1x-high-quality-CNN.gif" alt="Realtime OCR character tracking preview" loading="lazy">
@@ -116,8 +116,8 @@
 
                 <div class="highlight-card">
                     <h3>Full-Stack RSVP Management Platform</h3>
-                    <p>Launched a production-ready RSVP workflow where guests can respond to wedding and event invitations, track party details, and leave personal notes. The frontend is hosted on Render with server-side logic that validates submissions and delivers crisp mobile-first experiences.</p>
-                    <p>The backend uses a Neon Postgres database for persistent storage, Prisma data models, and secure API routes for creating, viewing, and updating RSVP entries. Admin controls surface live attendee stats in a single dashboard.</p>
+                    <p>Production-ready RSVP workflow for event invitations with guest responses, party tracking, and a mobile-first frontend.</p>
+                    <p>Backend uses Neon Postgres, Prisma, and secure API routes with an admin dashboard for live attendee stats.</p>
                     <div class="highlight-media">
                         <img src="rsvp-website/rsvp-1.png" alt="RSVP landing page with hero imagery" loading="lazy">
                         <div class="image-grid">
@@ -129,6 +129,24 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/ethanjensn/full-stack-rsvp-website.git" class="btn" target="_blank" onclick="gtag('event', 'project_click', {'event_label': 'full-stack-rsvp-website'});">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <h3>2D Multiplayer Tactical Shooter - Gunfight Engine</h3>
+                    <p>Real-time multiplayer tactical shooter built from scratch with a custom ECS game engine and a Java WebSocket server.</p>
+                    <p>Serves a cross-platform HTML5/Canvas client at 60 TPS with matchmaking, projectile physics, line-of-sight, and mobile joystick controls.</p>
+                    <div class="highlight-media">
+                        <img src="2D-Gunfight/video_demo.webp" alt="Gunfight Engine gameplay demo" loading="lazy">
+                        <div class="image-grid">
+                            <img src="2D-Gunfight/screenshot-main-page.png" alt="Gunfight Engine main menu" loading="lazy">
+                            <img src="2D-Gunfight/screenshot-queue-page.png" alt="Gunfight Engine queue screen" loading="lazy">
+                            <img src="2D-Gunfight/screenshot-map-one-page.png" alt="Gunfight Engine map overview" loading="lazy">
+                            <img src="2D-Gunfight/screenshot-map-fog-page.png" alt="Gunfight Engine fog of war vision" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ethanjensn/Gunfight-Engine.git" class="btn" target="_blank" onclick="gtag('event', 'project_click', {'event_label': 'Gunfight-Engine'});">GitHub Repo</a>
                     </div>
                 </div>
             </div>
