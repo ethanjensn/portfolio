@@ -20,11 +20,10 @@
         <nav>
             <div class="container">
                 <ul>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#highlights">Highlights</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#about">About</a></li>
                 </ul>
             </div>
         </nav>
@@ -33,13 +32,21 @@
     <section class="hero">
         <div class="container">
             <h1>Ethan Jensen</h1>
-            <p>Computer Science Student | AI/ML • Computer Vision • Reinforcement Learning</p>
-            <p style="font-size: 0.95rem; opacity: 1; margin-top: 0.35rem;">Former Founding Developer @ SoundSafe.ai</p>
+            <p>Computer Science Student | Former AI/ML Software Engineering Intern @ SoundSafe.ai</p>
             <div class="hero-links">
                 <a href="mailto:1013jensen@gmail.com" onclick="gtag('event', 'contact_click', {'event_label': 'email'});">1013jensen@gmail.com</a>
                 <a href="https://www.linkedin.com/in/ethan-jensen-891241252/" target="_blank" onclick="gtag('event', 'social_click', {'event_label': 'linkedin'});">LinkedIn</a>
                 <a href="https://github.com/ethanjensn" target="_blank" onclick="gtag('event', 'social_click', {'event_label': 'github'});">GitHub</a>
                 <a href="ethan-jensen.pdf" download class="btn" onclick="gtag('event', 'download', {'event_category': 'resume', 'event_label': 'ethan-jensen.pdf'});">Download Resume (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>Computer Science student with experience building AI-powered software systems focused on computer vision, reinforcement learning, and real-time inference. My work spans production AI pipelines, OCR, robotics simulation, and full-stack software engineering.</p>
             </div>
         </div>
     </section>
@@ -255,84 +262,39 @@
             <h2>Experience</h2>
             <div class="resume-content">
                 <div class="resume-item">
-                    <h3>Founding Developer</h3>
+                    <h3>AI/ML Software Engineering Intern</h3>
                     <div class="company">SoundSafe.ai</div>
-                    <div class="date">March 2026 - May 2026 | Galena, IL</div>
+                    <div class="date">June 2025 – May 2026</div>
+                    <p>Contributed to computer vision, reinforcement learning, backend infrastructure, and production AI deployment at an early-stage startup while progressively assuming broader software engineering responsibilities.</p>
                     <ul>
-                        <li>Drive the technical roadmap and R&D strategy for SoundSafe.ai's flagship violence-detection platform.</li>
-                        <li>Oversee full-stack development of proprietary AI algorithms and system architecture to align with product goals.</li>
-                        <li>Coordinate cross-functional efforts to translate research breakthroughs into reliable production deployments.</li>
+                        <li>Built real-time violence detection systems using YOLO and Transformer models.</li>
+                        <li>Designed GPU-accelerated FFmpeg/GStreamer inference pipelines.</li>
+                        <li>Developed reinforcement learning agents in NVIDIA Isaac Lab.</li>
+                        <li>Engineered CNN-based OCR systems.</li>
+                        <li>Built backend services and monitoring dashboards.</li>
                     </ul>
-                </div>
-
-                <div class="resume-item">
-                    <h3>AI Software Engineer</h3>
-                    <div class="company">SoundSafe.ai</div>
-                    <div class="date">December 2025 - March 2026 (4 months) | Galena, IL</div>
-                    <ul>
-                        <li>Architected video ingestion pipelines by migrating from NVIDIA DeepStream to a custom FFmpeg-based service, improving flexibility and stream reliability.</li>
-                        <li>Integrated YOLO-based computer vision models into the production dashboard for high-accuracy, multi-stream violence detection.</li>
-                        <li>Built a responsive React frontend that visualizes real-time detections alongside system performance metrics.</li>
-                        <li>Reduced latency across multi-stream environments through NVIDIA hardware acceleration and GStreamer optimizations.</li>
-                        <li>Managed deployments, Git workflows, and Dockerized services to streamline collaborative troubleshooting of AI/ML codebases.</li>
-                    </ul>
-                </div>
-
-                <div class="resume-item">
-                    <h3>AI/ML Intern</h3>
-                    <div class="company">SoundSafe.ai</div>
-                    <div class="date">June 2025 - December 2025 (7 months) | On-site</div>
-                    <ul>
-                        <li>Developed and trained a reinforcement learning agent in NVIDIA Isaac Lab for real-time LiDAR-based obstacle avoidance.</li>
-                        <li>Improved simulation efficiency and reward accuracy by implementing Direct Tensor Access for collision feedback.</li>
-                        <li>Engineered a custom alpha-numeric CNN OCR system using EMNIST datasets to enable high-accuracy live video recognition.</li>
-                        <li>Collaborated on deploying AI-powered watermarking and deepfake detection tooling across company platforms.</li>
-                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><strong>Core Technologies:</strong> Python • FastAPI • React • PyTorch • YOLO • OpenCV • FFmpeg • GStreamer • Docker • PostgreSQL</p>
                 </div>
 
                 <div class="resume-item">
                     <h3>Commission Sales Associate</h3>
                     <div class="company">Slumberland Furniture</div>
-                    <div class="date">December 2022 - September 2025 (2 years 10 months) | Dubuque, Iowa, United States</div>
-                    <ul>
-                        <li>Prioritize building trust and cultivating strong relationships with customers</li>
-                        <li>Ensure each customer leaves with an exceptional experience and a unique connection</li>
-                        <li>Tailor each interaction to create a personal connection with every individual</li>
-                        <li>Keep tabs on customers' orders and watch orders daily</li>
-                        <li>Keep updated with new products and system changes, and maintain stock knowledge</li>
-                        <li>Utilize body language reading and relationship-building skills to meet sales quotas</li>
-                    </ul>
+                    <div class="date">December 2022 - September 2025</div>
+                    <p>Built customer relationships and provided exceptional service while meeting sales quotas.</p>
                 </div>
 
                 <div class="resume-item">
                     <h3>Repair Technician</h3>
                     <div class="company">CPR Cell Phone Repair</div>
-                    <div class="date">July 2021 - December 2022 (1 year 6 months) | Iowa, United States</div>
-                    <ul>
-                        <li>Sold refurbished phones, cases, protectors, and various accessories</li>
-                        <li>Repaired and refurbished iPhones and Samsung devices in-house</li>
-                        <li>Assisted customers with phone and tech-related issues, including screen replacements and device setup</li>
-                        <li>Managed closing the till, purchase orders, and inventory</li>
-                        <li>Fixed devices in a timely manner with excellent time management</li>
-                        <li>Received a 70% increase in wage within a year</li>
-                        <li>Handled money and troubleshooting</li>
-                    </ul>
+                    <div class="date">July 2021 - December 2022</div>
+                    <p>Repaired and refurbished mobile devices while managing inventory and customer service.</p>
                 </div>
 
                 <div class="resume-item">
                     <h3>Warehouse Associate</h3>
                     <div class="company">Slumberland Furniture</div>
-                    <div class="date">October 2020 - July 2021 (10 months) | Iowa, United States</div>
-                    <ul>
-                        <li>Assisted customers with loading furniture into their vehicles and unloading furniture from semis in a timely and careful manner</li>
-                        <li>Supported customers and sales staff by rearranging furniture in the showroom to help visualize color and style combinations</li>
-                        <li>Supervised coworkers to ensure they performed their duties correctly</li>
-                        <li>Made sure showroom was presentable and assembled furniture with care</li>
-                        <li>Took orders and packed items for customer deliveries</li>
-                        <li>Processed delivery reports and inventory, manually inspected items</li>
-                        <li>Familiar with power tools and organized materials</li>
-                        <li>Received 3 raises in 8 months</li>
-                    </ul>
+                    <div class="date">October 2020 - July 2021</div>
+                    <p>Managed furniture logistics, showroom organization, and inventory processing.</p>
                 </div>
             </div>
 
@@ -347,53 +309,6 @@
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>
-                    I’m a Computer Science student at Southern New Hampshire University and an AI/ML developer focused on computer vision and reinforcement learning systems. My work includes real-time detection pipelines, OCR systems, and robotics simulation using NVIDIA Isaac Lab.
-                </p>
-                <p style="margin-top: 1rem;">
-                    My top skills include Java, Python, and interpersonal communication. I love solving complex problems 
-                    and creating innovative solutions with AI and machine learning. Feel free to explore my projects below 
-                    and check out my work experience!
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <!-- Project Card Template - Copy and modify for each project -->
-                <div class="project-card">
-                    <h3>CLI Task Tracker</h3>
-                    <p>Command-line interface task management application for organizing and tracking tasks efficiently.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ethanjensn/CLI-Task-Tracker.git" class="btn" target="_blank" onclick="gtag('event', 'project_click', {'event_label': 'CLI-Task-Tracker'});">GitHub Repo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Check-in and Out Animals</h3>
-                    <p>Animal management system for tracking check-in and check-out processes. Demonstrates data management and user interface design skills.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ethanjensn/Check-in-and-Out-Animals.git" class="btn" target="_blank" onclick="gtag('event', 'project_click', {'event_label': 'Check-in-and-Out-Animals'});">GitHub Repo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Text-Based Game</h3>
-                    <p>Interactive text-based adventure game demonstrating game logic, user interaction, and narrative design in a command-line environment.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/ethanjensn/Text-Based-Game.git" class="btn" target="_blank" onclick="gtag('event', 'project_click', {'event_label': 'Text-Based-Game'});">GitHub Repo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="container">
