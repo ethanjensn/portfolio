@@ -32,7 +32,7 @@
     <section class="hero">
         <div class="container">
             <h1>Ethan Jensen</h1>
-            <p>Computer Science Student | Former AI/ML Software Engineering Intern @ SoundSafe.ai</p>
+            <p>Computer Science Student | Former Software Engineer & AI/ML Intern @ SoundSafe.ai</p>
             <div class="hero-links">
                 <a href="mailto:1013jensen@gmail.com" onclick="gtag('event', 'contact_click', {'event_label': 'email'});">1013jensen@gmail.com</a>
                 <a href="https://www.linkedin.com/in/ethan-jensen-891241252/" target="_blank" onclick="gtag('event', 'social_click', {'event_label': 'linkedin'});">LinkedIn</a>
@@ -264,39 +264,59 @@
             <h2>Experience</h2>
             <div class="resume-content">
                 <div class="resume-item">
-                    <h3>AI/ML Software Engineering Intern</h3>
-                    <div class="company">SoundSafe.ai</div>
-                    <div class="date">June 2025 – May 2026</div>
-                    <p>Contributed to computer vision, reinforcement learning, backend infrastructure, and production AI deployment at an early-stage startup while progressively assuming broader software engineering responsibilities.</p>
+                    <h3>Software Engineer</h3>
+                    <div class="company">SoundSafe.ai — Galena, IL</div>
+                    <div class="date">Dec. 2025 – May 2026</div>
                     <ul>
-                        <li>Built real-time violence detection systems using YOLO and Transformer models.</li>
-                        <li>Designed GPU-accelerated FFmpeg/GStreamer inference pipelines.</li>
-                        <li>Developed reinforcement learning agents in NVIDIA Isaac Lab.</li>
-                        <li>Engineered CNN-based OCR systems.</li>
-                        <li>Built backend services and monitoring dashboards.</li>
+                        <li>Architected and deployed the real-time threat detection inference and serving layer: low-latency multi-stream AI video inference using PyTorch, YOLOv8, OpenCV, FFmpeg, GStreamer, and GPU acceleration; FastAPI microservices and WebSockets — achieved ~26 FPS across 6 concurrent DOT camera feeds and sub-30ms YOLOv8 inference latency.</li>
+                        <li>Built the monitoring and scoring frontend for the threat detection platform: a Next.js/React/TypeScript dashboard with HLS.js and React Flow; integrated UTS vehicle threat scoring with production-grade stream processing, maintaining 100% reliability (zero downtime over 70+ second runs) and 300+ detections per minute.</li>
+                        <li>Violence Detection: Built and deployed a 5.3M-parameter RGBPoseFusionV2 dual-stream model (pose LSTM + MobileNetV3-Small with test-time augmentation) for real-time violence classification, achieving 89.92% accuracy, 0.9012 precision, 0.8926 recall, and 0.8969 F1-score; optimized inference to 17.81 FPS at 720p with 56.15 ms end-to-end latency (37.81 ms pose, 12.8 ms model) on an RTX 3080, using 0.19 GB GPU memory and a 20.51 MB footprint; implemented temporal smoothing and threshold sweep (0.51) to reduce false positives to 10.27%.</li>
+                        <li>Achieved 99.16% mAP@0.5, 42.5 FPS inference, 98.56% precision, and 97.91% recall on drone detection for production-ready deployment.</li>
                     </ul>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><strong>Core Technologies:</strong> Python • FastAPI • React • PyTorch • YOLO • OpenCV • FFmpeg • GStreamer • Docker • PostgreSQL</p>
+                </div>
+
+                <div class="resume-item">
+                    <h3>AI/ML Intern</h3>
+                    <div class="company">SoundSafe.ai — Galena, IL</div>
+                    <div class="date">Jun. 2025 – Dec. 2025</div>
+                    <ul>
+                        <li>Autonomous Navigation with Reinforcement Learning in NVIDIA Isaac Lab: Implemented a PPO-based RL agent for autonomous vehicle navigation, training on 8,192 parallel environments with 360° LiDAR perception (60 rays) and continuous throttle/steering control; achieved a mean reward of 103.72 on a 5-waypoint gap navigation task with randomized obstacles, and ~100% waypoint completion against the 100-point baseline; improved simulation efficiency to 38,373 FPS through Direct Tensor Access.</li>
+                        <li>Real-Time Alphanumeric OCR with CNN: Built and deployed TensorFlow Lite digit and alphanumeric CNNs, achieving 98.09% top-1 accuracy on the MNIST test set and 86.77% top-1 accuracy across 116,323 held-out EMNIST ByClass samples, with confusion-matrix and macro per-class accuracy analysis.</li>
+                        <li>Automatic License Plate Recognition System: Built an end-to-end ALPR pipeline with YOLOv8 plate detection, PaddleOCR recognition, FastAPI/WebSocket serving, and distance-based tracking; created an evaluation framework measuring detection, latency, tracking, and resource utilization; achieved 85.9 FPS, 11.6 ms mean / 15.3 ms p95 latency, and 85.0% precision at 0.5 IoU; root-caused a ~58% recall drop under adverse weather/flooding conditions.</li>
+                    </ul>
                 </div>
 
                 <div class="resume-item">
                     <h3>Commission Sales Associate</h3>
-                    <div class="company">Slumberland Furniture</div>
-                    <div class="date">December 2022 - September 2025</div>
-                    <p>Built customer relationships and provided exceptional service while meeting sales quotas.</p>
+                    <div class="company">Slumberland Furniture — Dubuque, IA</div>
+                    <div class="date">Dec 2022 - Sep 2025</div>
+                    <ul>
+                        <li>Exceeded Monthly sales targets by 15% on average.</li>
+                        <li>Ranked #1 in Flexsteel Furniture Sales in 2024.</li>
+                        <li>Ranked top 10 in Sales in 150+ stores black friday weekend in 2024, selling 100k+ in 1 month.</li>
+                        <li>Averaged 650k+ in sales every year.</li>
+                    </ul>
                 </div>
 
                 <div class="resume-item">
                     <h3>Repair Technician</h3>
-                    <div class="company">CPR Cell Phone Repair</div>
-                    <div class="date">July 2021 - December 2022</div>
-                    <p>Repaired and refurbished mobile devices while managing inventory and customer service.</p>
+                    <div class="company">CPR Cell Phone Repair — Dubuque, IA</div>
+                    <div class="date">Jul 2021 - Dec 2022</div>
+                    <ul>
+                        <li>Diagnosed hardware and software issues for mobile devices, consoles, and computers while managing inventory and technical operations.</li>
+                        <li>Technical Troubleshooting: Performed hardware repairs and software troubleshooting for a wide range of iPhone and Samsung devices.</li>
+                        <li>Sales &amp; Refurbishment: Managed the sale of refurbished devices and accessories while executing high-quality, inhouse repairs.</li>
+                        <li>Inventory &amp; Operations: Handled till closing, purchase orders, and inventory management while receiving a 70% wage increase within a year due to performance.</li>
+                    </ul>
                 </div>
 
                 <div class="resume-item">
                     <h3>Warehouse Associate</h3>
-                    <div class="company">Slumberland Furniture</div>
-                    <div class="date">October 2020 - July 2021</div>
-                    <p>Managed furniture logistics, showroom organization, and inventory processing.</p>
+                    <div class="company">Slumberland Furniture — Dubuque, IA</div>
+                    <div class="date">Oct 2020 - Jul 2021</div>
+                    <ul>
+                        <li>Directed warehouse logistics and assembly while supervising team efficiency and inventory accuracy.</li>
+                    </ul>
                 </div>
             </div>
 
